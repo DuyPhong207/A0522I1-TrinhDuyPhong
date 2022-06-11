@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="header">
+    <div style="margin-left: 24px;" id="header">
         <h2>Market Research Survey</h2>
         <p>Please take a few moments to complete this satisfaction survey.</p>
     </div>
 
-    <div id="container">
-        <ul>
+    <div style="margin-left: 24px;" id="container">
+        <ul style="list-style-type: none;">
             <li>
                 <p>What is your age range?</p>
                 <select class="age-infor" name="age" id="" onchange="">
@@ -37,12 +37,80 @@
 
             <li class="gender">
                 <p>Gender Identity</p>
-                <span> <input type="radio"> <label for=""><span>Male</span></label> </span>
-                <span><input type="radio"> <label for=""><span>Female</span></label></span>
-                <span><input type="radio"> <label for=""><span>Nonbinary</span></label></span>
-                <span><input type="radio"> <label for=""><span>Other</span></label></span>
-                
+                <span><input type="radio" name="gender"> <label for=""><span>Male</span></label></span>
+                <span><input type="radio" name="gender"> <label for=""><span>Female</span></label></span>
+                <span><input type="radio" name="gender"> <label for=""><span>Nonbinary</span></label></span>
+                <span><input type="radio" name="gender"> <label for=""><span>Other</span></label></span>
+                <input style="width: 20%" type="text">
+                <p>Maximum of 250 characters.</p><p>Currently Used: 0 characters.</p>
             </li>
+
+            <li class="product">
+                <p><b>Which of the following products have your purchased in the last 2 months. Please check all that apply.</b></p>
+                <span><input type="checkbox" name="product"> <label for=""><span>Product 1</span></label></span>
+                <span><input type="checkbox" name="product"> <label for=""><span>Product 2</span></label></span>
+                <span><input type="checkbox" name="product"> <label for=""><span>Product 3</span></label></span>
+            </li>
+
+            <li class="time-use">
+                <p><b>How often would you use our new product?</b></p>
+                <span><input type="radio" name="time"> <label for=""><span>Daily</span></label></span>
+                <span><input type="radio" name="time"> <label for=""><span>Weekly</span></label></span>
+                <span><input type="radio" name="time"> <label for=""><span>Monthly</span></label></span>
+            </li>
+
+            <li>
+                <p><b>What would you pay for the new product?</b></p>
+                <span>$</span><input style=" width: 80px" type="number"><span> . </span><input style="width:20px;" type="number">
+            </li>
+
+            <li>
+                <p><b>What features would you like to see in the new product.</b></p>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </li>
+
+            <li>
+                <p>Please rate your level agreement with the fllowwing statements</p>
+                <table border="1" cellspacing="20" style="border-collapse:collapse; width: 90%; height: 200px; text-align: center; margin-top: 10px;">
+                    <tr style="background-color: #ccc;">
+                        <th></th>
+                        <th>Strongly Disagree</th>
+                        <th>Disagree</th>
+                        <th>Agree</th>
+                        <th>Strongly Agree</th>
+                    </tr>
+
+                    <tr>
+                        <th>Out of products are priced fairly.</th>
+                        <th><input type="radio" name="radio">1</th>
+                        <th><input type="radio" name="radio">2</th>
+                        <th><input type="radio" name="radio">3</th>
+                        <th><input type="radio" name="radio">4</th>
+                    </tr>
+
+                    <tr style="background-color: #e5e8eb;">
+                        <th>Out of products are high quality.</th>
+                        <th><input type="radio" name="radio">1</th>
+                        <th><input type="radio" name="radio">2</th>
+                        <th><input type="radio" name="radio">3</th>
+                        <th><input type="radio" name="radio">4</th>
+                    </tr>
+
+                    <tr>
+                        <th>You would recommend our product to a friend of coworker.</th>
+                        <th><input type="radio" name="radio">1</th>
+                        <th><input type="radio" name="radio">2</th>
+                        <th><input type="radio" name="radio">3</th>
+                        <th><input type="radio" name="radio">4</th>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <button style="width: 140px;"><b style="font-size: 26px;">Submit</b></button>
+            </li>
+
+
         </ul>
     </div>
 
@@ -86,12 +154,16 @@ html {
     margin-top: 20px;
 }
 
-#container .gender {
+#container .gender,.product, .time-use{
     display: grid;
 }
 
 #container .gender input {
     margin: 10px 8px;
+}
+
+#container li {
+    padding-bottom: 20px;
 }
 
     </style>
