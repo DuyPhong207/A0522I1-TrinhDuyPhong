@@ -7,7 +7,7 @@
     <title>Lịch</title>
 </head>
 <body>
-    <h1>Tháng 10 - October</h1>
+    <h1 class="blue">Tháng 10 - October</h1>
     <table>
         <tr>
             <th style="background-color: red;">C.Nhật</th>
@@ -19,13 +19,13 @@
             <th style="background-color: blue;">T.Bảy</th>
         </tr>
         <tr>
-            <th>Sun</th>
+            <th class="red">Sun</th>
             <th>Mon</th>
             <th>Tue</th>
             <th>Wed</th>
             <th>Thu</th>
             <th>Fri</th>
-            <th>Sat</th>
+            <th class="blue">Sat</th>
         </tr>
     </table>
 
@@ -35,45 +35,45 @@
             <th></th>
             <th></th>
             <th></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
+            <th><p>1<sub>13</sub></p></th>
+            <th><p>2<sub>14</sub></p></th>
+            <th><p class="blue">3<sub>15</sub></p></th>
         </tr>
         <tr>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
+            <th><p class="red">4<sub>16</sub></p></th>
+            <th><p>5<sub>17</sub></p></th>
+            <th><p>6<sub>18</sub></p></th>
+            <th><p>7<sub>19</sub></p></th>
+            <th><p>8<sub>20</sub></p></th>
+            <th><p>9<sub>21</sub></p></th>
+            <th><p class="blue">10<sub>22</sub></p></th>
         </tr>
         <tr>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
+            <th><p class="red">11<sub>23</sub></p></th>
+            <th><p>12<sub>24</sub></p></th>
+            <th><p>13<sub>25</sub></p></th>
+            <th><p>14<sub>26</sub></p></th>
+            <th><p>15<sub>27</sub></p></th>
+            <th><p>16<sub>28</sub></p></th>
+            <th><p class="blue">17<sub>29</sub></p></th>
         </tr>
         <tr>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
+            <th><p class="red">18<sub>1.9</sub></p></th>
+            <th><p>19<sub>2</sub></p></th>
+            <th><p>20<sub>3</sub></p></th>
+            <th><p>21<sub>4</sub></p></th>
+            <th><p>22<sub>5</sub></p></th>
+            <th><p>23<sub>6</sub></p></th>
+            <th><p class="blue">24<sub>7</sub></p></th>
         </tr>
         <tr>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
-            <th><sub></sub></th>
+            <th><p class="red">25<sub>8</sub></p></th>
+            <th><p>26<sub>9</sub></p></th>
+            <th><p>27<sub>10</sub></p></th>
+            <th><p>28<sub>11</sub></p></th>
+            <th><p>29<sub>12</sub></p></th>
+            <th><p>30<sub>13</sub></p></th>
+            <th><p class="blue">31<sub>14</sub></p></th>
         </tr>
     </table>
 </body>
@@ -81,6 +81,27 @@
     th {
         width: 80px;
         height: 30px;
+    }
+
+    .a th {
+        border: 3px solid #ccc;
+    }
+
+    .red {
+        color: red;
+    }
+
+    .red sub {
+        color: black;
+
+    }
+
+    .blue {
+        color: blue;
+    }
+
+    .blue sub {
+        color: black;
     }
 </style>
 </html>
