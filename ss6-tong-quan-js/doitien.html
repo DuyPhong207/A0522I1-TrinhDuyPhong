@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đổi tiền</title>
+</head>
+<body>
+    <b><label for="Amount">Amount</label></body</b><br>
+    <input type="number" value="" id="amount" size="30"><br>
+    <b><label for="from">From Currency</label></body</b><br>
+    <select name="fromcurrency" id="from">
+        <option value="vietnam">VietNam</option>
+    </select><br>
+    <b><label for="from">To Currency</label></body</b><br>
+    <select name="fromcurrency" id="to">
+        <option value="vietnam">USD</option>
+    </select><br>
+
+    <button onclick="btn()">Convert</button>
+</body>
+<script>
+    function btn() {
+        var a = document.getElementById("amount").value
+        var b = a/23000
+        document.write("Result :" + b)
+    }
+</script>
+</html>

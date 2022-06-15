@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+    <b style="size:20px; margin-bottom: 30px;">Caculator</b><br>
+    <input type="number" id="number1" size="40px"><span>     </span><input type="number" id="number2"><br>
+    <button onclick="addition()">Addition(+)</button>
+    <button onclick="subtraction()">Subtraction(-)</button>
+    <button onclick="mutiplication()">Mutiplication(x)</button>
+    <button onclick="division()">Division(/)</button><br>
+    <p id="result"></p>
+</body>
+<script>
+    function addition() {
+        var a = parseInt(document.getElementById("number1").value)
+        var b = parseInt(document.getElementById("number2").value)
+        document.getElementById("result").innerText = "Result :" + (a + b)
+    }
+    function subtraction() {
+        var a = parseInt(document.getElementById("number1").value)
+        var b = parseInt(document.getElementById("number2").value)
+        document.getElementById("result").innerText = "Result :" + (a - b)
+    }
+    function mutiplication() {
+        var a = parseInt(document.getElementById("number1").value)
+        var b = parseInt(document.getElementById("number2").value)
+        document.getElementById("result").innerText = "Result :" + (a * b)
+    }
+    function division() {
+        var a = parseInt(document.getElementById("number1").value)
+        var b = parseInt(document.getElementById("number2").value)
+        document.getElementById("result").innerText = "Result :" + (a / b)
+    }
+</script>
+</html>
