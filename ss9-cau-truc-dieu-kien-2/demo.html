@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let income = parseInt(prompt("Enter your income this month (unit : million vnd) : "));
+ if ( income < 5 ) {
+      tax = income * 5 / 100 * 1000000;
+      incomeTax = income * 1000000 - tax
+      document.write("Your personal income tax this month : " + tax + "vnd" + "<br>" + "After tax-income : " + incomeTax + "vnd");
+  } else if (5 < income < 10 ) {
+      tax = income * 10/100 * 1000000;
+      incomeTax = income * 1000000 - tax;
+      document.write("Your personal income tax this month : " + tax + "vnd" + "<br>" + "After tax-income : " + incomeTax + "vnd");
+ } else if ( 10 < income < 18) {
+      tax = income * 15/100 * 1000000;
+      incomeTax = income * 1000000 - tax;
+      document.write("Your personal income tax this month : " + tax + "vnd" + "<br>" + "After tax-income : " + incomeTax + "vnd");
+ }
+</script>
+</body>
+</html>
