@@ -7,7 +7,15 @@
     <title>Kiểm tra tam giác</title>
 </head>
 <body>
-    <p>Nhập 3 cạnh a,b,c của tam giác</p>
-    <input type="text" >
 </body>
+<script>
+    var a = parseInt(prompt("Nhập số thứ nhất"));
+    var b = parseInt(prompt("Nhập số thứ hai"));
+    var c = parseInt(prompt("Nhập số thứ ba"));
+    if (a+b>c && b+c>a && c+a>b) {
+        document.writeln("Đây là 3 cạnh của 1 tam giác");
+    } else {
+        document.writeln("Đây không phải 3 cạnh của 1 tam giác");
+    }
+</script>
 </html>

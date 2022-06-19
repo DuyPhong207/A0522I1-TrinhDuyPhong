@@ -8,4 +8,25 @@
 </head>
 <body>
 </body>
+<script>
+    var a = parseInt(prompt("Nhập số kW điện đã sử dụng"));
+    if (0 < a) {
+        if (a < 51) {
+            document.write("Tiền điện : " + (a*1678) + " vnd");
+        } else if (a < 101) {
+            document.write("Tiền điện : " + (a*1734) + " vnd");
+        } else if (a < 201) {
+            document.write("Tiền điện : " + (a*2014) + " vnd");
+        } else if (a < 301) {
+            document.write("Tiền điện : " + (a*2536) + " vnd");
+        } else if (a < 401) {
+            document.write("Tiền điện : " + (a*2834) + " vnd");
+        } else {
+            document.write("Tiền điện : " + (a*2927) + " vnd");
+        }
+    } else {
+        document.write("Vui lòng nhập lại 1 số lớn hơn 0");
+    }
+</script>
+
 </html>

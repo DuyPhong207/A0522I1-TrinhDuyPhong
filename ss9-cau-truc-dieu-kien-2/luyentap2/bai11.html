@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính lãi ngân hàng</title>
+</head>
+<body>
+    <p>Số tiền vay (Kvnd) :</p>
+    <input type="text" id="tiengoc" size="40px">
+    <p>Lãi suất hàng tháng (%) :</p>
+    <input type="text" id="lai" size="40px">
+    <p>Số tháng vay :</p>
+    <input type="text" id="sothang" size="40px"><br>
+    <button style="margin: 16px 0px" onclick="tinhtienlai()">Tính lãi</button>
+    <p id="result"></p>
+</body>
+<script>
+    function tinhtienlai() {
+    var tiengoc = document.getElementById("tiengoc").value;
+    var laithang = document.getElementById("lai").value;
+    var thang = document.getElementById("sothang").value;
+    var nam = (thang/12).toFixed(1);
+    var lainam = laithang*12;
+    var f1 = 1 + lainam/100;
+    var fn = Math.pow(f1,nam);
+    var tienlai = ((tiengoc*fn) - tiengoc).toFixed(2);
+    document.getElementById("result").innerText = "Tiền lãi: " + tienlai + " Kvnd";
+    }
+</script>
+</html>
