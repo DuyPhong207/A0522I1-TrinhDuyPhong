@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính đơn giản</title>
+</head>
+<body>
+    <div id="calculator">
+        <div id="screen">
+            <input style="text-align: right;" type="text" readonly id="result" >
+        </div>
+        <div id="keyboard">
+            <button onclick="In_so(this.value)" class="so" id="1" value="1">1</button>
+            <button onclick="In_so(this.value)" class="so" id="2" value="2">2</button>
+            <button onclick="In_so(this.value)" class="so" id="3" value="3">3</button>
+            <button onclick="In_so(this.value)"  class="pheptinh" value="+" id="+">+</button>
+            <button onclick="In_so(this.value)" class="so" value="4" id="4">4</button>
+            <button onclick="In_so(this.value)" class="so" id="5" value="5">5</button>
+            <button onclick="In_so(this.value)" class="so" id="6" value="6">6</button>
+            <button onclick="In_so(this.value)"  class="pheptinh" id="-" value="-">-</button>
+            <button onclick="In_so(this.value)" class="so" id="7" value="7">7</button>
+            <button onclick="In_so(this.value)" class="so" id="8" value="8">8</button>
+            <button onclick="In_so(this.value)" class="so" id="9" value="9">9</button>
+            <button onclick="In_so(this.value)"  class="pheptinh" id="x" value="*">x</button>
+            <button onclick="Xoa_so()" class="xoa" id="c">C</button>
+            <button onclick="In_so(this.value)" class="so" id="0" value="0">0</button>
+            <button onclick="In_ket_qua()" class="ketqua" id="=">=</button>
+            <button onclick="In_so(this.value)" class="pheptinh" id="/" value="/">/</button>
+        </div>
+    </div>
+</body>
+<style>
+#calculator {
+    width: 340px;
+    height: 400px;
+    background-color: #ccc;
+}
+
+#screen {
+    text-align: right;
+    height:60px;
+    margin: 10px 20px;
+    font-size: 30px;
+}
+
+.so, .pheptinh, .ketqua, .xoa {
+    width:50px;
+    height:50px;
+    margin: 15px;
+    float:left;
+    border-radius: 50%;
+    border-width: 0;
+    font-weight:bold;
+    font-size:16px;
+}
+</style>
+<script>
+    function In_so(input) {
+        var output = document.getElementById("result").value;
+        document.getElementById("result").value = output + input;
+        
+    }
+
+    function In_ket_qua() {
+            var ketqua = document.getElementById("result").value = ouput + input;
+            var text = "ketqua";
+            var result = eval(text);
+            document.getElementById("result").value = result;
+    }
+
+    function Xoa_so() {
+        document.getElementById("result").value = "";
+    }
+
+</script>
+</html>

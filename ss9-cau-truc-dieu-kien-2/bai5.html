@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xếp hạng điểm</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th></th>
+            <th>Điểm bài kiểm tra</th>
+            <th>Điểm thi giữa kì</th>
+            <th>Điểm thi cuối kì</th>
+        </tr>
+
+        <tr>
+            <th>Điểm</th>
+            <th><input type="number" min="0" max="10" value="" id="diembaikiemtra"></th>
+            <th><input type="number" min="0" max="10" value="" id="diemthigiuaki"></th>
+            <th><input type="number" min="0" max="10" value="" id="diemthicuoiki"></th>
+        </tr>
+
+    </table>
+    <button onclick="xemketqua()" id="btn">Xem Kết Quả</button>
+
+    <p id="result"></p>
+</body>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    input {
+        width: 50px;
+    }
+
+    p {
+        text-align: left;
+    }
+
+    th {
+        border: 1px solid black;
+        width: 100px;
+        height: 30px;
+    }
+
+    #btn {
+        margin-top: 15px;
+    }
+</style>
+
+<script>
+    function xemketqua() {
+        var a = document.getElementById("diembaikiemtra").value;
+        var p1 = a/10*15;
+        var b = document.getElementById("diemthigiuaki").value;
+        var p2 = b/10*30;
+        var c = document.getElementById("diemthicuoiki").value;
+        var p3 = c/10*55;
+        var sum = p1+p2+p3;
+        if (sum < 65) {
+            document.getElementById("result").innerText = "Loại kém";
+        } else if (sum <= 69) {
+            document.getElementById("result").innerText = "Loại trung bình";
+        } else if (sum <= 79) {
+         document.getElementById("result").innerText = "Loại khá";
+        } else if (sum <= 84) {
+            document.getElementById("result").innerText = "Loại giỏi";
+        } else if (sum <= 100) {
+            document.getElementById("result").innerText = "Loại xuất sắc";
+        } else {
+            document.getElementById("result").innerText = "Nhập lại những điểm lớn hơn 10";
+        }
+    }
+</script>
+</html>
