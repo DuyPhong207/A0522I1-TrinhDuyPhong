@@ -1,0 +1,9 @@
+var tb = "<table boder= "1px" width= "800px" cellspacing="0" cellpadding="3">";
+    for (i = 2; i <= 9; i++) {
+        tb = tb + "<tr>";
+        for (j = 1; j <= 10; j++) {
+            tb =tb + "<td>" + i +"x" + j + "=" + i*j "</td>";
+        }
+        tb = tb + "</tr>";
+    }
+    tb = tb + "</table>";

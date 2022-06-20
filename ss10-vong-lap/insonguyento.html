@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In số nguyên tố</title>
+</head>
+<body>
+<script>
+    var number = parseInt(prompt("Nhập số lượng số nguyên tố cần hiển thị"));
+    var dem = 0;
+    var n = 1;
+    function Snt(a) {
+            if (a < 2) {
+                return false;
+            } else if (a == 2) {
+                return  true;
+            } else {
+                for (var i = 2; i <= Math.sqrt(a); i++) {
+                    if (a % i == 0) {
+                       return kq = false;
+                    }
+                }
+                return true
+            }
+        }
+
+    while (dem < number) {
+            if (Snt(n) == true) {
+                document.write(n + "<br>");
+                dem++;
+            }
+            n++
+    }
+</script>
+</body>
+</html>
