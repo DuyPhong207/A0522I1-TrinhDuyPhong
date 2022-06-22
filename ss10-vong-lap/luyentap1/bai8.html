@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hãy thử đoán xem</title>
+</head>
+<body>
+    <button onclick="Play()">Chơi</button>
+<script>
+function Play() {
+    var a = parseInt(prompt("Min"));
+    var b = parseInt(prompt("Max"));
+    var c = parseInt(prompt("Dự đoán"));
+    var d = Math.floor(Math.random() * (b-a+1) + a);
+    if (c === d) {
+        alert("Chúc mừng bạn đã đoán đúng");
+    } else {
+        alert("Sai rồi. Bấm chơi để bắt đầu lại");
+    }
+}
+</script>
+</body>
+</html>

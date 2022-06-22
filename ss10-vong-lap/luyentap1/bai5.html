@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tính tổng </title>
+</head>
+<body>
+<script>
+    var a = parseInt(prompt("Nhập số lượng số cần hiển thị trong dãy Fibonacci"));
+    var n1 = 0;
+    var n2 = 1;
+    var sum = 0;
+    var stt = n1 + n2;
+    for (var i = 1; i <= a; i++) {
+        document.write(n1 + '<br>');
+        stt = n1 + n2;
+        sum = sum + n1;
+        n1 = n2;
+        n2 = stt;
+    }
+    document.writeln("tổng của " + a + " số đầu tiên trong dãy là: " + sum);
+</script>
+</body>
+</html>
