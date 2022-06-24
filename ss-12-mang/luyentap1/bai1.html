@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    var numbers = [1,3,5,7,9,11,13,15,17,19];
+    var newNum = [];
+    var dem = 0;
+    for (i=0;i<numbers.length;i++) {
+        if (numbers[i] >= 10) {
+            newNum.push(numbers[i]);
+            dem++;
+        }
+    }
+    document.write(newNum.join(', '));
+    document.write('<br>')
+    document.write("Số phần tử lớn hơn hoặc bằng 10 : " + dem)
+</script>  
+</body>
+</html>

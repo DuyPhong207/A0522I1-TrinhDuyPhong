@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bài 4</title>
 </head>
 <body>
-<script>
-let x = [1,3,5,7];
-let y = [2,4,6];
-x[2] = y[x.length-3] + x [ x[0] + y[0] ];
-console.log(x);
-</script>
 </body>
+<script>
+    var num = [1,2,3,4,5,6,7,8,9,10];
+    var newNum = [];
+    for (i=num.length;i>=0;i--) {
+        newNum.push(num[i]);
+    }
+    document.write(newNum.join(', '));
+</script>
 </html>
