@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    function starSearch(a) {
+        var Array1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega',
+                'Altair', 'Dubhe', 'Regulus'];
+        var Array2 = ['Ursa Minor', 'Tarurus', 'Cygnus',
+                'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+        for (i=0;i<Array1.length;i++) {
+            if (a === Array1[i]) {
+                document.write('Thuộc chòm sao: ' + Array2[i]);
+            }
+        }
+    }
+    var m = prompt('Nhập tên ngôi sao');
+    starSearch(m);
+</script>   
+</body>
+</html>

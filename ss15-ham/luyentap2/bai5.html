@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    function sonhonhat(a,b,c) {
+        if (a > b && b > c || c < b && c < a) {
+        document.write("Số nhỏ nhất là " + c);
+    } else if (a < b && c > b || c > a && a < b) {
+        document.write("Số nhỏ nhất là " + a);
+    } else {
+        document.write("Số nhỏ nhất là " + b);
+    }
+    }
+</script>    
+</body>
+</html>
