@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài 4</title>
+    <title>Bài 1</title>
 </head>
 <body>
-</body>
 <script>
-    var num = [1,2,3,4,5,6,7,8,9,10];
-    var newNum = [];
-    for (i=num.length;i>=0;i--) {
-        newNum.push(num[i]);
+    let arr1 = [1,2,3,4,5];
+    let arr2 = [];
+    let sum = 0;
+    for (i=0;i<arr1.length;i++) {
+        sum += arr1[i];
+        arr2.push(sum);
     }
-    document.write(newNum.join(' '));
+    document.write(arr2.join(', '));
 </script>
+</body>
 </html>

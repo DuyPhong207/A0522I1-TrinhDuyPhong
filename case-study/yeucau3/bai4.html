@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let numbers = [0,1,2,3,4,5,6,7,8,9];
+    let words = ['không','một','hai','ba','bốn','năm','sáu','bảy','tám','chín'];
+    let result = [];
+    let n = prompt('Nhập 1 số');
+    let arrNumber = n.split('');
+    for (i=0;i<arrNumber.length;i++) {
+        for (j=0;j<numbers.length;j++) {
+            if (arrNumber[i] == numbers[j]) {
+                result.push(words[j]);
+            }
+        }
+    }
+    document.write(result.join(' '));
+</script>   
+</body>
+</html>

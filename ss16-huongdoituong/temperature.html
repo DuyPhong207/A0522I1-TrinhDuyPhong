@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Class</title>
+</head>
+<body>
+<script>
+    var Temperature = function(tempC) {
+        this.tempC = tempC;
+        this.getTempC = function() {
+            return tempC;
+        }
+        this.getTempF = function() {
+            return 9/5*tempC+32;
+        }
+        this.getTempK = function() {
+            return tempC+273.15;
+        }
+    }
+    var t = parseInt(prompt('Enter C temperature'));
+    var f = t.getTempF();
+    console.log(f);
+    var k = t.getTempK();
+    console.log(k);
+</script>   
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+</head>
+<body>
+    <p id="thue"></p>
+    <br>
+    <p id="luongrong"></p>
+</body>
+</html>
+<script>
+    let luong = parseInt(prompt('Nhập lương (triệu đồng)'));
+    let thue = 0;
+    if (luong < 0) {
+        document.write('Nhập lại mức lương lớn hơn 0');
+    } else if (luong < 7) {
+        document.getElementById('thue').innerText = 'Thuế: ' + luong*5/100 + ' triệu đồng';
+        document.getElementById('luongrong').innerText = 'Lương ròng: ' + (luong - luong*5/100) + ' triệu đồng';
+    } else if (luong < 15) {
+        document.getElementById('thue').innerText = 'Thuế: ' + luong/10 + ' triệu đồng';
+        document.getElementById('luongrong').innerText = 'Lương ròng: ' + (luong - luong/10) + ' triệu đồng';
+    } else {
+        document.getElementById('thue').innerText = 'Thuế: ' + luong/5 + ' triệu đồng';
+        document.getElementById('luongrong').innerText = 'Lương ròng: ' + (luong - luong/5) + ' triệu đồng';
+    }
+</script>
