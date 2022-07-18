@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+<body>
+    <script>
+        let str1 = 'assd';
+        let str2 = 'asds';
+        let arr1 = str1.split('');
+        let arr2 = str2.split('');
+        let arr = [];
+        for (i = 0;i < arr1.length;i++) {
+            let count = 0;
+            for (j = 0;j < arr2.length;j++) {
+                if (arr1[i] == arr2[j]) {
+                    count ++;
+                }
+            }
+            if (count > 0) {
+                arr.push(arr1[i]);
+            }
+        }
+        document.write(arr.length);
+    </script>
+</body>
+</html>

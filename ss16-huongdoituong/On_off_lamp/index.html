@@ -2,13 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bật tắt bóng đèn</title>
-    <script src="scrip.js"></script>
+    <title>Swicth and lamp</title>
 </head>
 <body>
-    <button onclick="click()">Công tắc</button>
-    <h1 id="bulb"></h1>
+<script>
+    let Lamp = function (name) {
+        this.name = name;
+        this.status = false;
+        this.turnOn = function () {
+            if (this.status) {
+                console.log("Tối")
+            } else {
+                console.log("Đèn đã được bật!");
+                this.status =true;
+            }
+        };
+        this.turnOff = function () {
+            if (this.status) {
+                console.log("Đèn đã được tắt!");
+                this.status =false
+            } else {
+                console.log("Sáng")
+
+            }
+        };
+    };
+    let _switch = function () {
+        this.lamp = {};
+        this.conectStatus = false;
+        this.conectToLamp = function (obj) {
+            this.lamp = obj;
+            this.status = true;
+        };
+        this.getStatus = function () {
+            if (this.status) {
+                console.log(this.lamp.name);
+                console.log(this.lamp.status);
+            }
+        };
+        this.turnOff = function () {
+            if (this.status) {
+                this.lamp.turnOff();
+                this.getStatus();
+            }
+        };
+        this.turnOn = function () {
+            if (this.status) {
+                this.lamp.turnOn();
+                this.getStatus();
+            }
+        }
+    };
+
+
+    let Switch = new _switch();
+    let lamp = new Lamp("Button");
+    Switch.conectToLamp(lamp);
+    Switch.turnOn();
+    Switch.turnOff();
+</script>
 </body>
 </html>

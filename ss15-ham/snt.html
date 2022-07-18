@@ -14,14 +14,17 @@
             } else if (a == 2) {
                 return  true;
             } else {
-                for (var i = 2; i <= Math.sqrt(a); i++) {
+                for (var i = 2; i < a; i++) {
                     if (a % i == 0) {
-                       return kq = false;
+                       return false;
                     }
                 }
                 return true
             }
         }
+    var n = parseInt(prompt());
+    var result = Snt(n);
+    console.log(result);
 </script>
 </body>
 </html>

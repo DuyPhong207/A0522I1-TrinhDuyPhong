@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam and eva</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    let apple = function() {
+        this.setPiece = function(piece) {
+            this.piece = piece;
+        }
+        this.getPiece = function() {
+            return this.piece;
+        }
+        this.reduceApple = function() {
+            if (this.piece > 0) {
+                return this.piece--;
+            } else {
+                return this.piece = 0;
+            }
+        }
+    }
+
+    let human = function(name,sex,weight,say) {
+        this.name = name;
+        this.sex = sex;
+        this.weight = weight;
+        this.say = say;
+        this.getWeight = function() {
+            return this.weight;
+        }
+        this.setApple = function(apple) {
+            this.apple = apple;
+        }
+        this.getApple_inf = function() {
+            return this.apple.getPiece();
+        }
+        this.bite = function(status) {
+            this.status = true;
+            return this.apple.reduceApple();
+        }
+        this.bites = function() {
+            if (this.status) {
+                this.weight++;
+                document.write(this.name +' say ' + this.say);
+            }
+        }
+    }
+
+    let adam = new human('Adam','Male',70,'give me');
+    let eva = new human('Eva','female',45,'my turn');
+    apple.setPiece(10);
+    adam.setApple(apple);
+    eve.setApple(apple);
+
+    for(i = 0;i < apple.setApple()/2;i++) {
+        adam.bite();
+        adam.bites();
+        document.write('Weight of Adam: ' + adam.getWeight() + '. Apple status: ' + adam.getApple_inf());
+        eva.bite();
+        eva.bites();
+        document.write('Weight of Eva: ' + eva.getWeight() + '. Apple status: ' + eva.getApple_inf());
+    }
+</script>

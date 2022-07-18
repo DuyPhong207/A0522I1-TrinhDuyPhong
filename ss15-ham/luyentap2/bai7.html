@@ -9,9 +9,13 @@
 <body>
 <script>
     function Doiso(a,b) {
-        document.writeln('Số thứ nhất là ' + b);
-        document.write('<br>');
-        document.writeln('Số thứ hai là ' + a);
+        var c = 0;
+        c = a;
+        a = b;
+        b = c;
+        document.write('Số thứ nhất: ' + a);
+        document.write('<br>')
+        document.write('Số thứ hai: ' + b);
     }
     var num1 = parseInt(prompt('Nhập số thứ nhất'));
     var num2 = parseInt(prompt('Nhập số thứ hai'));

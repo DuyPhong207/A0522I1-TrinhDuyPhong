@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1: Chuẩn hóa xâu kí tự</title>
+</head>
+<body>
+<script>
+function Chuan_hoa_chuoi(chuoi) {
+  return chuoi.toLowerCase().replace(/(^|\s)\S/g, function(l) {
+    return l.toUpperCase();
+  });
+}
+
+function Tu_dai_nhat(chuoi) {
+    let arr = chuoi.split(' ');
+    let tudainhat = 0;
+    for (i = 0;i < arr.length;i++) {
+        if (arr[i].length > tudainhat) {
+            tudainhat = arr[i];
+        }
+        return tudainhat;
+    }
+}
+
+let str = prompt('Nhập chuỗi');
+let result = Chuan_hoa_chuoi(str);
+document.write(result + '<br>');
+document.write(Tu_dai_nhat(result));
+</script>  
+</body>
+</html>
