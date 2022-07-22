@@ -19,11 +19,18 @@
         }
         return sum;
     }
-    let Arr = [
-        [1,2,3],
-        [2,3,4]
-    ]
-    console.log(evenSum(Arr));
+    let m = parseInt(prompt('Nhập m'));
+    let n = parseInt(prompt('Nhập n'));
+    let arr = [];
+    for (i = 0;i < m;i++) {
+        arr1 = [];
+        for (j = 0;j < n;j++) {
+            number = Math.floor(Math.random()*10);
+            arr1.push(number);
+        }
+        arr.push(arr1);
+    }
+    console.log(evenSum(arr));
 </script>
 </body>
 </html>

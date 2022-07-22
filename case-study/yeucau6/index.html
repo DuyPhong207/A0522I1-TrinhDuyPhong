@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Dãy số trứng thưởng:</p>
+        <input id="luckyNum1" type="text">
+        <input id="luckyNum2" type="text">
+        <input id="luckyNum3" type="text">
+        <input id="luckyNum4" type="text">
+        <input id="luckyNum5" type="text">
+        <input id="luckyNum6" type="text">
+    </div>
+
+    <div>
+        <p>Dãy số bạn chọn:</p>
+        <input id="num1" type="number">
+        <input id="num2" type="number">
+        <input id="num3" type="number">
+        <input id="num4" type="number">
+        <input id="num5" type="number">
+        <input id="num6" type="number">
+    </div>
+
+    <button onclick="Muave()">Mua vé</button>
+    <button onclick="Xemketqua()">Xem kết quả</button>
+</body>
+<style>
+    input {
+        width: 80px;
+    }
+
+    div {
+        margin-top: 24px;
+    }
+
+    button {
+        margin: 24px 0 24px;
+    }
+</style>
+<script>
+    class Number {
+        constructor(num1,num2,num3,num4,num5,num6) {
+            this.num1 = num1;
+            this.num2 = num2;
+            this.num3 = num3;
+            this.num4 = num4;
+            this.num5 = num5;
+            this.num6 = num6;
+        }
+        }
+    function Muave() {
+        let slt = parseInt(prompt('Bạn có 2 lựa chọn:\n 1.Bạn muốn tự chọn số. \n 2.Hệ thống tự random'));
+        if (slt == 1) {
+            let luckyArr = [];
+            for (i=0;i<6;i++) {
+                luckyArr.push(Math.floor(Math.random()*100));
+            }
+            sltNum1 = document.getElementById('num1');
+            sltNum2 = document.getElementById('num2');
+            sltNum3 = document.getElementById('num3');
+            sltNum4 = document.getElementById('num4');
+            sltNum5 = document.getElementById('num5');
+            sltNum6 = document.getElementById('num6');
+            let selectNumber = new Number(sltNum1,sltNum2,sltNum3,sltNum4,sltNum5,sltNum6)
+        }
+    }
+</script>
+</html>

@@ -5,61 +5,41 @@
     <title>Swicth and lamp</title>
 </head>
 <body>
+    <h1>Bật tắt bóng đèn</h1>
+    <img id="lamp" src="/On_off_lamp/pic_bulboff.gif" alt="Ảnh">
+    <button id="swicth" onclick="On_Off_Lamp()">Turn On/Turn Off</button>
+    <p id="result">Bóng đèn đang tắt</p>
 <script>
-    let Lamp = function (name) {
-        this.name = name;
-        this.status = false;
-        this.turnOn = function () {
-            if (this.status) {
-                console.log("Tối")
-            } else {
-                console.log("Đèn đã được bật!");
-                this.status =true;
-            }
-        };
-        this.turnOff = function () {
-            if (this.status) {
-                console.log("Đèn đã được tắt!");
-                this.status =false
-            } else {
-                console.log("Sáng")
+    class SwicthButton {
+        constructor(status) {
+            this.status = status;
+        }
 
-            }
-        };
-    };
-    let _switch = function () {
-        this.lamp = {};
-        this.conectStatus = false;
-        this.conectToLamp = function (obj) {
-            this.lamp = obj;
-            this.status = true;
-        };
-        this.getStatus = function () {
-            if (this.status) {
-                console.log(this.lamp.name);
-                console.log(this.lamp.status);
-            }
-        };
-        this.turnOff = function () {
-            if (this.status) {
-                this.lamp.turnOff();
-                this.getStatus();
-            }
-        };
-        this.turnOn = function () {
-            if (this.status) {
-                this.lamp.turnOn();
-                this.getStatus();
+        turnOn_turnOff() {
+            this.status = !this.status;
+        }
+    }
+    class Lamp {
+        constructor(button) {
+            this.button = button;
+        }
+        Swicth() {
+            if (this.button.status) {
+                document.getElementById('lamp').src = '/On_off_lamp/pic_bulbon.gif';
+                document.getElementById('result').innerText = 'Bóng đèn đang bật';
+            } else {
+                document.getElementById('lamp').src = '/On_off_lamp/pic_bulboff.gif';
+                document.getElementById('result').innerText = 'Bóng đèn đang tắt';
             }
         }
-    };
+    }
 
-
-    let Switch = new _switch();
-    let lamp = new Lamp("Button");
-    Switch.conectToLamp(lamp);
-    Switch.turnOn();
-    Switch.turnOff();
+    let Sony_swicthButton = new SwicthButton(false);
+    let Sony_Lamp = new Lamp(Sony_swicthButton);
+    function On_Off_Lamp() {
+        Sony_swicthButton.turnOn_turnOff();
+        Sony_Lamp.Swicth();
+    }
 </script>
 </body>
 </html>
