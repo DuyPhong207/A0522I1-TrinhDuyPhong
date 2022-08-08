@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bài 2</title>
+</head>
+<body>
+</body>
+<script>
+    let time = prompt('Nhập ngày, tháng, năm đúng định dạng "dd/MM/yyyy"');
+    let timeArr = time.split('/');
+    if (timeArr.length != 3) {
+        alert('Yêu cầu nhập đúng định dạng "dd/MM/yyyy"');
+    } else {
+        testYear(timeArr);
+    }
+
+    function testYear(array) {
+        if (array[2] % 4 == 0 || array[2] % 100 == 0 || array[2] % 400 == 0) {
+            document.write(array[2] + ' là năm nhuận.');
+        } else {
+            document.write(array[2] + ' không là năm nhuận.');
+        }
+    }
+</script>
+</html>

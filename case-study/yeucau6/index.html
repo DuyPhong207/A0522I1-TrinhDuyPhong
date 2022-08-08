@@ -8,67 +8,120 @@
 </head>
 <body>
     <div>
-        <p>Dãy số trứng thưởng:</p>
-        <input id="luckyNum1" type="text">
-        <input id="luckyNum2" type="text">
-        <input id="luckyNum3" type="text">
-        <input id="luckyNum4" type="text">
-        <input id="luckyNum5" type="text">
-        <input id="luckyNum6" type="text">
+        <p id="result"></p>
     </div>
-
-    <div>
-        <p>Dãy số bạn chọn:</p>
-        <input id="num1" type="number">
-        <input id="num2" type="number">
-        <input id="num3" type="number">
-        <input id="num4" type="number">
-        <input id="num5" type="number">
-        <input id="num6" type="number">
-    </div>
-
-    <button onclick="Muave()">Mua vé</button>
-    <button onclick="Xemketqua()">Xem kết quả</button>
 </body>
-<style>
-    input {
-        width: 80px;
-    }
-
-    div {
-        margin-top: 24px;
-    }
-
-    button {
-        margin: 24px 0 24px;
-    }
-</style>
 <script>
-    class Number {
-        constructor(num1,num2,num3,num4,num5,num6) {
-            this.num1 = num1;
-            this.num2 = num2;
-            this.num3 = num3;
-            this.num4 = num4;
-            this.num5 = num5;
-            this.num6 = num6;
+    class Lottery {
+        constructor(number1,number2,number3,number4,number5,number6,amount = '') {
+            this.number1 = number1;
+            this.number2 = number2;
+            this.number3 = number3;
+            this.number4 = number4;
+            this.number5 = number5;
+            this.number6 = number6;
+            this.amount = amount;
+        }
+        setNumber1(num1) {
+            this.number1 = num1;    
+        }
+        getNumber1() {
+            return this.number1;
+        }
+        setNumber2(num2) {
+            this.number2 = num2;
+        }
+        getNumber2() {
+            return this.number2;
+        }
+        setNumber3(num3) {
+            this.number3 = num3;
+        }
+        getNumber3() {
+            return this.number3;
+        }
+        setNumber4(num4) {
+            this.number4 = num4;
+        }
+        getNumber4() {
+            return this.number4;
+        }
+        setNumber5(num5) {
+            this.number5 = num5;
+        }
+        getNumber5() {
+            return this.number5;
+        }
+        setNumber6(num6) {
+            this.number6 = num6;
+        }
+        getNumber6() {
+            return this.number6;
+        }
+        setAmount(amount) {
+            this.amount = amount;
+        }
+        getAmount() {
+            return this.amount;
+        }
+        getNumber() {
+            return [this.number1,this.number2,this.number3,this.number4,this.number5,this.number6]
+        }
+        getRandomNumber() {
+            this.setNumber1(Math.floor(Math.random()*99));
+            this.setNumber2(Math.floor(Math.random()*99));
+            this.setNumber3(Math.floor(Math.random()*99));
+            this.setNumber4(Math.floor(Math.random()*99));
+            this.setNumber5(Math.floor(Math.random()*99));
+            this.setNumber6(Math.floor(Math.random()*99));
+        }
+        getInfo() {
+            return 'Vé số' + this.getNumber().join(' ') + this.amount;
         }
         }
-    function Muave() {
-        let slt = parseInt(prompt('Bạn có 2 lựa chọn:\n 1.Bạn muốn tự chọn số. \n 2.Hệ thống tự random'));
-        if (slt == 1) {
-            let luckyArr = [];
-            for (i=0;i<6;i++) {
-                luckyArr.push(Math.floor(Math.random()*100));
-            }
-            sltNum1 = document.getElementById('num1');
-            sltNum2 = document.getElementById('num2');
-            sltNum3 = document.getElementById('num3');
-            sltNum4 = document.getElementById('num4');
-            sltNum5 = document.getElementById('num5');
-            sltNum6 = document.getElementById('num6');
-            let selectNumber = new Number(sltNum1,sltNum2,sltNum3,sltNum4,sltNum5,sltNum6)
+        let arrLottery = [];
+    function menu() {
+        let choose;
+        if (arrLottery < 4) {
+            choose = parseInt(prompt('Bạn có 2 lựa chọn\n 1.Bạn muốn tự chọn số.\n 2.Hệ thống tự random'));
+        }
+
+        if (choose === 1) {
+            inputLottery;
+        } else if (choose === 2) {
+            randomLottery();
+        } else {
+            alert('Chỉ chọn 1 trong 2');
         }
     }
+    function drawLottery(arr) {
+        let lottery;
+        let str;
+        for(i=0;i<arr.length;i++) {
+            str = "<input value = '" + arr[i].getNumber1() + "'>" +
+            "<input value = '" + arr[i].getNumber2() + "'>" +
+            "<input value = '" + arr[i].getNumber3() + "'>" +
+            "<input value = '" + arr[i].getNumber4() + "'>" +
+            "<input value = '" + arr[i].getNumber5() + "'>" +
+            "<input value = '" + arr[i].getNumber6() + "'>" + '<br>'
+        }
+        document.getElementById('result').innerHTML = str;
+    }
+    function randomLottery() {
+        let lottery = new Lottery();
+        lottery.getRandomNumber();
+        arrLottery.push(lottery);
+        drawLottery(arrLottery);
+    }
+    function inputLottery() {
+        let arrNum = [];
+        for(i = 0;i < 6;i++) {
+            arrNum[i] = parseInt(prompt('Nhập vào số thứ' + (i + 1) + 'của vé số'));
+        }
+        let lottery = new Lottery(arrNum[0], arrNum[1], arrNum[2], arrNum[3], arrNum[4], arrNum[5]);
+        arrLottery.push(lottery);
+        drawLottery(arrLottery);
+    }
+    menu();
 </script>
 </html>

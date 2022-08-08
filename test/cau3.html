@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+    th,tr,td {
+        width: 150px;
+        text-align: center;
+    }
+    button {
+        width: 100px;
+        height: 25px;
+    }
+</style>
+<body>
+    <p id="Hienthi"></p>
+    <button onclick="Themmoi()">Thêm mới</button>
+</body>
+<script>
+    class XeMay {
+        constructor(biensoxe,hoten,cmnd,hangxe,phidadong) {
+            this.biensoxe = biensoxe;
+            this.hoten = hoten;
+            this.cmnd = cmnd;
+            this.hangxe = hangxe;
+            this.phidadong = phidadong;
+        }
+
+        getBiensoxe() {
+            return this.biensoxe;
+        }
+        setBiensoxe(newBiensoxe) {
+            this.biensoxe = newBiensoxe;
+        }
+        getHoten() {
+            return this.hoten;
+        }
+        setBiensoxe(newHoten) {
+            this.biensoxe = newHoten;
+        }
+        getCmnd() {
+            return this.cmnd;
+        }
+        setBiensoxe(newCmnd) {
+            this.cmnd = newCmnd;
+        }
+        getHangxe() {
+            return this.hangxe;
+        }
+        setBiensoxe(newHangxe) {
+            this.hangxe = newHangxe;
+        }
+        getPhidadong() {
+            return this.phidadong;
+        }
+        setBiensoxe(newPhidadong) {
+            this.phidadong = newPhidadong;
+        }
+    }
+    let hocvien1 = new XeMay('30A-888.88','Nguyễn Văn A',123456789,'Honda',60000);
+    let hocvien2 = new XeMay('30A-888.88','Nguyễn Văn A',123456789,'Honda',60000);
+    let codeGym = [hocvien1,hocvien2];
+    HienThi(codeGym);
+    function HienThi(array) {
+        let str =
+            "<table border=\"1px\">\n" +
+            "  <tr>\n" +
+            "      <th>Biển số xe</th>\n" +
+            "      <th>Họ Tên</th>\n" +
+            "      <th>Chứng minh nhân dân</th>\n" +
+            "      <th>Hãng xe</th>\n" +
+            "      <th>Phí gửi xe đã đóng</th>\n" +
+            "      <th>Thao tác</th>\n" +
+            "  </tr>";
+        for (let i = 0; i < array.length ; i++) {
+            str += "<tr>" +
+                    "<td>"+ array[i].getBiensoxe()+"</td>"+
+                    "<td>"+ array[i].getHoten()+"</td>"+
+                    "<td>"+ array[i].getCmnd()+"</td>"+
+                    "<td>"+ array[i].getHangxe()+"</td>"+
+                    "<td>"+ array[i].getPhidadong()+"</td>"+
+                    "<td>"+
+                    "<button onclick='SuaThongTin("+i+")'>Sửa thông tin</button>"+
+                    "<button onclick='XoaXe("+i+")'>Xóa Thông tin</button>"+
+                "</td>"+
+                "</tr>"
+        }
+        str += "</table>";
+        document.getElementById("Hienthi").innerHTML = str;
+    }
+
+    function Themmoi() {
+        let newBiensoxe = prompt('Nhập biển số xe theo dạng "38P1-123.45"(Không quá 20 kí tự)');
+        let newHoten = prompt('Nhập họ tên (không quá 40 kí tự)');
+        let newCmnd = parseInt(prompt('Nhập số cmnd'));
+        let newHangxe = prompt('Nhập hãng xe');
+        let newPhidadong = parseInt(prompt('Nhập phí gửi xe đã đóng'));
+        if (newBiensoxe.length > 20 || newHoten.length > 40) {
+            alert('Vui lòng nhập lại trong khoảng kí tự cho phép')
+        } else {
+            let newHocvien = new XeMay(newBiensoxe,newHoten,newCmnd,newHangxe,newPhidadong);
+            codeGym.push(newHocvien);
+            alert('Thêm mới thành công!')
+            HienThi(codeGym);
+        }
+    }
+
+    function XoaXe(value) {
+        let XacNhan = confirm('Bạn chắc chắn chưa?');
+        if (XacNhan) {
+            codeGym.splice(value,1);
+        }
+        HienThi(codeGym);
+        alert('Xóa thành công!')
+    }
+
+    function SuaThongTin(value) {
+        let newBiensoxe = prompt('Nhập biển số xe theo dạng "38P1-123.45"');
+        let newHoten = prompt('Nhập họ tên (không quá 40 kí tự)');
+        let newCmnd = parseInt(prompt('Nhập số cmnd'));
+        let newHangxe = prompt('Nhập hãng xe');
+        let newPhidadong = parseInt(prompt('Nhập phí gửi xe đã đóng'));
+        let newHocvien = new XeMay(newBiensoxe,newHoten,newCmnd,newHangxe,newPhidadong);
+        codeGym[value] = newHocvien;
+        HienThi(codeGym);
+        alert('Sửa thông tin thành công!');
+    }
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    let n = parseInt(prompt('Nhập số lượng phần tử của mảng (< 50)'));
+    let arrayNum = [];
+    for (i = 0;i < n;i++) {
+        num = parseInt(prompt('Nhập số bất kì'));
+        arrayNum.push(num);
+    }
+    document.writeln('Mảng vừa nhập: ' + arrayNum.join(', ') + '<br>');
+    TestArray(arrayNum);
+
+    function TestArray(Array) {
+        let acount = 0;
+        for (i = 1;i < (Array.length) -1;i++) {
+            if ((Array[i] < Array[i+1]) && (Array[i] < Array[i-1]) || (Array[i] > Array[i-1] && Array[i] > Array[i+1])) {
+                acount++;
+            }
+        }
+        if (acount == (Array.length - 2)) {
+            document.write('true');
+        } else {
+            document.write('false');
+        }
+    }
+</script>
+</html>
