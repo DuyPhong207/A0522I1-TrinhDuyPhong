@@ -16,9 +16,10 @@ public class TongDuongCheo {
         for (int i = 0;i < arr.length;i++) {
             sum = sum + arr[i][i];
         }
-//        for (int i = arr.length - 1;i >= 0;i--) {
-//            sum = sum + arr[i][i];
-//        }
+        int j = arr.length - 1;
+        for (int i = 0;i < arr.length;i++) {
+            sum = sum + arr[i][j-i];
+        }
         System.out.println("Tổng các phần tử đường chéo = " + sum);
     }
 }
